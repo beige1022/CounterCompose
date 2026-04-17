@@ -17,11 +17,13 @@ import  androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.material3.Button
+import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.Alignment
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -42,7 +44,7 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun Counter (modifier: Modifier = Modifier) {
 
-    var counterVal = remember {mutableSetOf(0)}
+    var counterVal = remember { mutableStateOf(0) }
 
     Column(modifier = modifier.fillMaxSize(),verticalArrangement = Arrangement.Center, horizontalAlignment = Alignment.CenterHorizontally) {
         Button(onClick =  {
